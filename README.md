@@ -27,22 +27,29 @@ This library obviously isn't stealthily going to be sending ongoing location dat
 This library will never be a substitute for using the PetKit official app(s), but I provide you with fair warning that the security protecting your information is pretty weak!
 ### Usage: ###
 
-    from pypetkit import PetKitAPI
-    from pprint import pprint
+```python
+from pypetkit import PetKitAPI
+from pprint import pprint
 
-    petkit_api = PetKitAPI(<<YOUR_USERNAME>>,<<YOUR_PASSWORD>>
-       [, <<API_COUNTRY_CODE>> <<API_LOCALE_CODE>>, <<API_TIMEZONE>>])
+petkit_api = PetKitAPI(<<YOUR_USERNAME>>,<<YOUR_PASSWORD>>
+   [, <<API_COUNTRY_CODE>> <<API_LOCALE_CODE>>, <<API_TIMEZONE>>])
+```
 
 #### Authenticate with Petoneer API ####
 
-    petkit_api.request_token()
+```python
+petkit_api.request_token()
+```
 
 #### Obtain List of PetKit Devices registered to your account ####
 
-    petkit_api.get_all_devices()
-    feeders = petkit_api.get_sensors()
+```python
+petkit_api.get_all_devices()
+feeders = petkit_api.get_sensors()
 
-    pprint(feeders)
+pprint(feeders)
+```
+
 ## API Documentation:
 
 As I'm able to capture MitM API calls between the iOS PetKit app and their API servers, I'm documenting all discovered API endpoints and extrapolating what certain values mean within both status reads and property posts to the system.
